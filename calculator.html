@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+            .container2 {
+                display:grid;
+                grid-template-columns: 100px 100px 100px 100px;
+                grid-template-rows: 100px 100px 100px 100px;
+            }
+            .container3 {
+                display: grid;
+                grid-template-columns: 300px 100px;
+                grid-template-rows: 100px;
+            }
+
+            .container1 {
+                display: grid;
+                grid-template-columns: 400px;
+                grid-template-rows: 100px;
+            }
+
+            .container4 {
+                display: grid;
+                grid-template-columns: 300px 100px;
+                grid-template-rows: 100px;
+            }
+
+    </style>
+</head>
+<body>
+
+        <div class="container1">
+            <!-- <button  name="btnresult" id="btnresult"></button> -->
+            <button><p id="result"></p>
+            <p id="result2"></p></button>
+        </div>
+
+        <div class="container3">
+            <button  name="btnc" id="btnc" onclick="cancel()">C</button> 
+            <button  name="btn/" id="btn/">/</button> 
+        </div>
+        <div class="container2">
+                <button  name="btn1" id="btn1" onclick="display1()">1</button>
+                <button  name="btn2" id="btn2" onclick="display2()">2</button>
+                <button  name="btn3" id="btn3" onclick="display3()">3</button>
+                <button  name="btn*" id="btn*" onclick="display1()">*</button>
+                <button  name="btn4" id="btn4" onclick="display4()">4</button>
+                <button  name="btn5" id="btn5" onclick="display5()">5</button>
+                <button  name="btn6" id="btn6" onclick="display6()">6</button>
+                <button  name="btn-" id="btn-" onclick="displayMinus()">-</button>
+                <button  name="btn9" id="btn9" onclick="display7()">7</button>
+                <button  name="btn8" id="btn8" onclick="display8()">8</button>
+                <button  name="btn9" id="btn9" onclick="display9()">9</button>
+                <button  name="btn+" id="btn+" onclick="displayPlus()">+</button>
+        </div>
+        <div class="container4">
+            <button  name="btn0" id="btn0" onclick="display0()">0</button> 
+            <button  name="btn=" id="btn=" onclick="returnResult()">=</button> 
+        </div>
+
+        <script>
+            function display1(){
+                var numa = Number(document.getElementById("btn1").value);
+                document.getElementById("result2").innerHTML += "1"; 
+            }
+            function display2(){
+                var numa = Number(document.getElementById("btn2").value);
+                document.getElementById("result2").innerHTML += "2"; 
+            }
+            function display3(){
+                var numa = Number(document.getElementById("btn3").value);
+                document.getElementById("result2").innerHTML += "3"; 
+            }
+            function display4(){
+                var numa = Number(document.getElementById("btn4").value);
+                document.getElementById("result2").innerHTML += "4"; 
+            }
+            function display5(){
+                var numa = Number(document.getElementById("btn5").value);
+                document.getElementById("result2").innerHTML += "5"; 
+            }
+            function display6(){
+                var numa = Number(document.getElementById("btn6").value);
+                document.getElementById("result2").innerHTML += "6"; 
+            }
+            function display7(){
+                var numa = Number(document.getElementById("btn7").value);
+                document.getElementById("result2").innerHTML += "7"; 
+            }
+            function display8(){
+                var numa = Number(document.getElementById("btn8").value);
+                document.getElementById("result2").innerHTML += "8"; 
+            }
+            function display9(){
+                var numa = Number(document.getElementById("btn9").value);
+                document.getElementById("result2").innerHTML += "9"; 
+            }
+            function display0(){
+                var numa = Number(document.getElementById("btn0").value);
+                document.getElementById("result2").innerHTML += "0"; 
+            }
+            function displayPlus(){
+                var numa = Number(document.getElementById("btn+").value);
+                document.getElementById("result2").innerHTML += "+"; 
+            }
+            function displayMinus(){
+                var numa = Number(document.getElementById("btn-").value);
+                document.getElementById("result2").innerHTML += "-"; 
+            }
+
+            function returnResult(){
+                var result = document.getElementById("result").value;
+                var arr = result.split("+");
+                var sum = 0;
+                 for(var i=0;i < arr.length;i++){
+                     sum += parseInt(arr[i]);
+                 }
+                document.getElementById("result2").innerHTML=sum;
+            }
+
+            function cancel(){
+                var result = document.getElementById("result");
+                var result2 = document.getElementById("result2");
+                    result.value = " ";
+                    result2.innerHTML = " ";
+            }
+
+            
+
+        // var str = "1+2+3"
+        // var arr = str.split("+");
+        // console.log(arr);
+        // var sum = 0;
+        // for(var i = 0; i <arr.length;i++){
+        //     sum += parseInt(arr[i])
+        // }
+        // console.log(sum);
+
+            
+        </script>
+</body>
+</html>
